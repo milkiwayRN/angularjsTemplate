@@ -1,7 +1,7 @@
 import * as ExampleActions from '../actions/example.actions';
 
 export default class SwitchController {
-    constructor($ngRedux, $scope) {
+    constructor($ngRedux) {
         /* ngRedux will merge the requested state's slice and actions onto this,
         you don't need to redefine them in your controller */
         console.log($ngRedux);
@@ -19,8 +19,7 @@ export default class SwitchController {
     onNextElement = () => {
         const currentIndex = this.elements.indexOf(this.currentElement);
         this.changeCurrentElement(this.elements[(currentIndex + 1) % this.elements.length]);
-        
-    }
+    };
 
     $onDestroy() {
         this.unsubscribe();

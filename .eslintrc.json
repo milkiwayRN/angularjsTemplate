@@ -1,12 +1,11 @@
 {
     "extends": [
-        "airbnb",
         "plugin:promise/recommended"
     ],
     "plugins": [
-        "react",
         "promise",
-        "class-property"
+        "class-property",
+        "import"
     ],
     "rules": {
         "linebreak-style": [2, "windows"],
@@ -25,14 +24,16 @@
         "no-shadow": 1,
         "brace-style": [2, "stroustrup"],
         "indent": [2, 4, { "SwitchCase": 1 }],
-        "max-len": 1,
+        "max-len": [1, 100],
         "class-methods-use-this": 0,
         "array-callback-return": 0,
         "no-case-declarations": 0,
         "consistent-return": 0,
         "no-class-assign": 1,
         "global-require": 1,
-        "import/first": 1,
+        "import/first": [1, {
+            "absolute-first": true
+        }],
         "no-prototype-builtins": 1,
         "import/no-named-default": 1,
         "import/no-named-as-default": 1,
@@ -62,8 +63,7 @@
         "ecmaVersion": 7,
         "sourceType": "module",
         "ecmaFeatures": {
-            "impliedStrict": true,
-            "jsx": true
+            "impliedStrict": true
         }
     },
     "globals": {
