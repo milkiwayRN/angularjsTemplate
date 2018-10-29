@@ -1,0 +1,8 @@
+<div>
+    <main ng-switch="$ctrl.currentElement">
+        <div ng-switch-when="button">Button!</div>
+        <div ng-switch-when="dropdown">Dropdown!</div>
+        <div ng-switch-when="input">Input!</div>
+    </main>
+    <button ng-click="$ctrl.onNextElement()">switch view</button>
+</div>
