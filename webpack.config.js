@@ -110,11 +110,11 @@ module.exports = env => {
     };
 
     if (env && env.production) {
-        // config.plugins.push(new UglifyJSPlugin({
-        //     sourceMap: true,
-        // }));
-        // envOptions.NODE_ENV = 'production';
-        // config.devtool = 'source-map';
+        config.plugins.push(new UglifyJSPlugin({
+            sourceMap: true,
+        }));
+        envOptions.NODE_ENV = 'production';
+        config.devtool = 'source-map';
     }
 
     config.plugins.push(new webpack.EnvironmentPlugin(envOptions));
