@@ -74,6 +74,12 @@ module.exports = env => {
                     }),
                 },
                 {
+                    test: /\.html$/,
+                    use: [ {
+                      loader: 'html-loader'
+                    }],
+                },
+                {
                     test: /\.(jpe?g|png|svg|gif|woff|woff2|eot|ttf)$/i,
                     loader: 'file-loader',
                     options: {
