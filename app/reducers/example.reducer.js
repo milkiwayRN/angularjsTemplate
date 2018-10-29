@@ -9,7 +9,7 @@ const initialState = {
     currentElement: 'button',
 }
 
-export function switchExampleReducer(state = initialState, action) {
+export default function switchExampleReducer(state = initialState, action) {
     switch(action.type) {
         case NEXT_ELEMENT:
             return {

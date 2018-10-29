@@ -1,6 +1,7 @@
 {
     "extends": [
-        "plugin:promise/recommended"
+        "plugin:promise/recommended",
+        "eslint:recommended"
     ],
     "plugins": [
         "promise",
