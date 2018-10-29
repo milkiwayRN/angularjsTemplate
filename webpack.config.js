@@ -7,8 +7,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 //const BrowserPlugin = require('webpack-browser-plugin');
 //const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-const chromeUserDataDir = '~/chrome-data';
-
 module.exports = env => {
     let buildDir = './dist';
     if (env && env.output) {
@@ -31,7 +29,6 @@ module.exports = env => {
         },
 
         plugins: [
-            new CleanWebpackPlugin('*', { root: buildPath }),
             new HtmlWebpackPlugin({
                 template: './index.html',
                 filename: 'index.html',
@@ -76,7 +73,7 @@ module.exports = env => {
                 {
                     test: /\.html$/,
                     use: [ {
-                      loader: 'html-loader'
+                        loader: 'html-loader'
                     }],
                 },
                 {
@@ -119,6 +116,7 @@ module.exports = env => {
         config.plugins.push(new UglifyJSPlugin({
             sourceMap: true,
         }));
+        config.plugins.unshift(new CleanWebpackPlugin('*', { root: buildPath }));
         envOptions.NODE_ENV = 'production';
         config.devtool = 'source-map';
     }
