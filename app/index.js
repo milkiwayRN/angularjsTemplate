@@ -1,6 +1,6 @@
 import angular from 'angular';
 import phoneList from './phoneList';
 
-module.exports = angular.module('phonecatApp', [])
+export default angular.module('phonecatApp', [])
 .component('phoneList', phoneList)
 .name;
