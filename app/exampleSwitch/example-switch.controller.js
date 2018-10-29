@@ -4,7 +4,6 @@ export default class SwitchController {
     constructor($ngRedux) {
         /* ngRedux will merge the requested state's slice and actions onto this,
         you don't need to redefine them in your controller */
-        console.log($ngRedux);
         this.unsubscribe = $ngRedux.connect(this.mapStateToThis, ExampleActions)(this);
     }
 
